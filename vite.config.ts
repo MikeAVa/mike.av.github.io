@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig(({ isSsrBuild }) => ({
+  base: isSsrBuild ? undefined : './',
   plugins: [react()],
   build: {
     outDir: isSsrBuild ? 'dist-ssr' : 'dist',
